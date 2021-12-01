@@ -40,7 +40,7 @@ Here, we present our benchmark of nine feasible strategies for mosaic variant de
       (i) Joint probability of two samples with “mosaic” variants was over 0.05   
       (ii) Joint probability larger than that of any other genotype combination
  * **Mutect2** (4.1.9.0)
-   * Altered filtration usage : tagged as normal artifacts
+   * Altered filtration usage : tagged as "normal artifacts"
  * **M2S2MH** 
    * MosaicHunter (v.1.0, single mode)
    * Mutect2 (4.1.9.0, paired mode)
@@ -58,7 +58,7 @@ Here, we present our benchmark of nine feasible strategies for mosaic variant de
    
 ## 3. Paired-sample analysis
 
-  #### (A) Two single analysis for single sample caller
+  #### (A) Two single analysis for single sample callers
   #### (B) Sensitivity evaluation on shared variant detection
   #### (C) Performance evaluation on grouped VAF range for shared variant detection 
 
