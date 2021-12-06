@@ -38,7 +38,7 @@ Here, we present our benchmark of nine feasible strategies for mosaic variant de
    * paired naïve mode
    * Modification:  
       (i) Joint probability of two samples with “mosaic” variants was over 0.05   
-      (ii) Joint probability larger than that of any other genotype combination
+      (ii) Joint probability larger than that of any other genotype combinations
  * **Mutect2** (4.1.9.0)
    * Altered filtration usage : tagged as "normal artifacts"
  * **M2S2MH** 
