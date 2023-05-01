@@ -1,14 +1,14 @@
 #!/usr/bin/python
 import glob
 import sys
-sys.path.append("/home/hiyoothere/modules/")
+sys.path.append("./modules/")
 import get_VAF
 import get_id
 import os
 
 type=sys.argv[1]
 dic_outname = { "4.MT":"*PASS.snps.vcf" }
-turn=[ 'mx', 'tp']
+turn=[ 'SetA', 'SetB']
 for each_turn in turn:
 	filelist = glob.glob("/data/project/MRS/4.Analysis_Mosaic/"+type+ "/0.DF/" + each_turn + '/' + dic_outname[type])
 	print filelist
