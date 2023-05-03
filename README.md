@@ -31,7 +31,7 @@ High confidence positive and negative control sets utilized in benchmark. Among 
  ### (A) Single sample analysis
 
  * **MosaicHunter** (v.1.0)  
-     `1.A.pipe_MosaicHunter_single.sh`
+     `1.A.pipe_MosaicHunter_single.sh, MH_Grab_Exome_Param.py`
  * **MosaicForecast** (v.0.0.1)  
     * model for SNV: 250xRFmodel_addRMSK_Refine.rds
     * model for INDEL: deletions_250x.RF.rds and insertions_250x.RF.rds   
