@@ -31,31 +31,20 @@ High confidence positive and negative control sets utilized in benchmark. Among 
  ### (A) Single sample analysis
 
  * **MosaicHunter** (v.1.0)  
-     ```
-     ./1.A.pipe_MosaicHunter_single.sh $Reference $Input_Bam $Output_Dir $Sample_ID $Input_DP $MosaicHunter_Path
-     ```
+     `1.A.pipe_MosaicHunter_single.sh`
  * **MosaicForecast** (v.0.0.1)  
     * model for SNV: 250xRFmodel_addRMSK_Refine.rds
     * model for INDEL: deletions_250x.RF.rds and insertions_250x.RF.rds   
-    
-     ```
-     ./1.A.pipe_MosaicForecast.sh $Reference #Input_Dir #$Output_Dir $Sample_ID $MosaicForecast_Path
-     ```   
+     `1.A.pipe_MosaicForecast.sh`   
  * **DeepMosaic** (v.0.0)  
    * model: efficientnet-b4_epoch_6.pt   
-   ```
-   ./1.A.pipe_DeepMosaic/Running_DeepMosaic.sh #Input_Dir #$Output_Dir $DeepMosaic_Path
-   ```
+   `1.A.pipe_DeepMosaic/Running_DeepMosaic.sh`
  * **Mutect2** (4.1.9.0)  
    * tumor only mode
-   ```
-   ./1.A.pipe_Mutect2_single.sh $Reference #Input_Dir #$Output_Dir $Input_Bam $Sample_ID
-   ```
+   `1.A.pipe_Mutect2_single.sh`
  * **HaplotypeCaller** (4.1.8.0)  
    * with ploidy option as 20 and 200 
-   ```
-   ./1.A.pipe_HaplotypeCaller_ploidy.sh  $Reference #Input_Dir #$Output_Dir $Input_Bam $ploidy
-   ```
+   `1.A.pipe_HaplotypeCaller_ploidy.sh`
     
   ### (B) Paired-sample analysis 
     
