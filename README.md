@@ -32,7 +32,7 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 
  * **MosaicHunter** (v.1.0)  
      ```
-     ./1.A.pipe_MosaicHunter_single.sh $Reference $Input_Bam $Output_Dir $Sample_ID $Input_DP
+     ./1.A.pipe_MosaicHunter_single.sh $Reference $Input_Bam $Output_Dir $Sample_ID $Input_DP $MosaicHunter_Path
      ```
  * **MosaicForecast** (v.0.0.1)  
     * model for SNV: 250xRFmodel_addRMSK_Refine.rds
