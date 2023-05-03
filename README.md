@@ -14,13 +14,17 @@ Here, we present our benchmark of nine feasible strategies for mosaic variant de
 ## 0. Controls
 High confidence positive and negative control sets utilized in benchmark. Among the full sets of 39 cell line mixture-based ground truth in the [original reference material](https://www.nature.com/articles/s41597-022-01133-8), we only considered high-confident regions by excluding the simple repeats and segmental duplications supplied by UCSC. Thus, 92% of SNVs and 72% of INDELs from positive controls were adjustable. For negative controls, 94% of non-variant sites and 91% of germline variants were available per sample. The original ground truth is available in [Mosaic-Reference-Standards](https://github.com/hiyoothere/Mosaic-Reference-Standards). 
  
- **1. Positive control** 
-  Positive_controls_hc.vcf`
-  * 345,552 SNVs and 8,706 INDELs
+ **1. Positive control**:
+  `controls/Positive_controls_hc.vcf`   
+   * 345,552 SNVs and 8,706 INDELs
   
- **2. Negative control**
-   * Non-variant site
-   * Germline variant
+ **2. Negative control**:
+   * Non-variant site: 
+   `controls/Negative_controls_nonvariant.vcf.gz`   
+     * 33,093,574 per sample
+   * Germline variant: 
+   `controls/Negative_controls_germline.vcf`  
+     * 18,151 per sample
     
 ## 1. Running variant callers
 
