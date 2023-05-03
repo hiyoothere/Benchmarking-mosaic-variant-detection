@@ -30,12 +30,22 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 
  ### (A) Single sample analysis
 
- * **MosaicHunter** (v.1.0)  
+ * **MosaicHunter** (v.1.0)
+     ```
+     ./1.A.pipe_MosaicHunter_single.sh $Reference $Input_Bam $Output_Dir $Sample_ID $Input_DP
+     ```
  * **MosaicForecast** (v.0.0.1)  
-   * SNV calling: 250xRFmodel_addRMSK_Refine.rds
-   * INDEL calling: deletions_250x.RF.rds and insertions_250x.RF.rds 
+    * model for SNV: 250xRFmodel_addRMSK_Refine.rds
+    * model for INDEL: deletions_250x.RF.rds and insertions_250x.RF.rds  
+     ```
+     ./1.A.pipe_MosaicForecast.sh $Reference #Input_Dir #$Output_Dir $Sample_ID $MosaicForecast_Path
+     ```   
+
  * **DeepMosaic** (v.0.0)  
-   * efficientnet-b4_epoch_6.pt
+   * model: efficientnet-b4_epoch_6.pt
+   ```
+   ./1.A.pipe_DeepMosaic/Running_DeepMosaic.sh #Input_Dir #$Output_Dir $DeepMosaic_Path
+   ```
  * **Mutect2** (4.1.9.0)  
    * tumor only mode 
  * **HaplotypeCaller** (4.1.8.0)  
