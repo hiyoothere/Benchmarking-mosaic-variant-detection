@@ -41,9 +41,9 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    `1.A.pipe_DeepMosaic/Running_DeepMosaic.sh`
  * **Mutect2** (4.1.9.0)  
    * tumor only mode
-   `1.A.pipe_Mutect2_single.sh`
+   `1.A.pipe_Mutect2_single.sh`  
  * **HaplotypeCaller** (4.1.8.0)  
-   * with ploidy option as 20 and 200 
+   * with ploidy option as 20 and 200   
    `1.A.pipe_HaplotypeCaller_ploidy.sh`
     
   ### (B) Paired-sample analysis 
