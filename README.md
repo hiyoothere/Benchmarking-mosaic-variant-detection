@@ -62,7 +62,10 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    * Mutect2 (4.1.9.0, paired mode)
    * Strelka2 (v.2.9.10, somatic mode)
    * Manta (v.1.6.0)   
-   `1.B.pipe_M2S2MH`
+   `1.B.pipe_M2S2MH`   
+ * [**Strelka2**](https://github.com/Illumina/strelka) (v.2.9.10)
+   * Strelka2 somatic calling mode  
+   `pipe_Strelka2.sh`
 
     
 ## 2. Single sample analysis
