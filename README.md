@@ -83,11 +83,12 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    * Visualization for Fig.2 b-d   
     `Fig2bcd.R` 
     
-  #### (C) Variant call set consistency across different sequencing depths   
-    `2.C.Depth_consistency.py`
+  #### (C) Variant call set consistency across different sequencing depths  
+    
+   `2.C.Depth_consistency.py`
   
-  #### (D) Variant call set consistency between callers   
-    2.D.Caller_consistency.py`
+  #### (D) Variant call set consistency between callers 
+   `2.D.Caller_consistency.py`
    
 ## 3. Paired-sample analysis
 
