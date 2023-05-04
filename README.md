@@ -70,8 +70,15 @@ High confidence positive and negative control sets utilized in benchmark. Among 
     
 ## 2. Single sample analysis
 
-  #### (A) Parsing the contorls from variant call sets
-  #### (B) Sensitivity evaluation towards diverse VAFs
+  #### (A) Parsing the variant calls with control sets.    
+   `2.A.Parsing_variant.py`
+  #### (B) Performance evaluation towards diverse VAF bins.   
+   * Calculation of sensitivity, precison, and F1-score
+   * precision recalibration applied based on the density of positive controls.  
+    `2.B.Variant_snv_performance.py`    
+   * AUPRC calculation   
+    `2.B.Variant_snv_performance.2.auprc.py
+       
   #### (C) Variant call consistency across different sequencing depths
   #### (D) Variant call consistency between callers
 
