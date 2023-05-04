@@ -12,41 +12,61 @@ Here, we present our benchmark of nine feasible strategies for mosaic variant de
 <br/>
 
 ## 0. Controls
- * Positive control
- * Negative control
-   * Non-variant site
-   * Germline variant
+High confidence positive and negative control sets utilized in benchmark. Among the full sets of 39 cell line mixture-based ground truth in the [original reference material](https://www.nature.com/articles/s41597-022-01133-8), we only considered high-confident regions by excluding the simple repeats and segmental duplications supplied by UCSC. Thus, 92% of SNVs and 72% of INDELs from positive controls were adjustable. For negative controls, 94% of non-variant sites and 91% of germline variants were available per sample. The original ground truth is available in [Mosaic-Reference-Standards](https://github.com/hiyoothere/Mosaic-Reference-Standards). 
+ 
+ **1. Positive control**:
+  `controls/Positive_controls_hc.vcf`   
+   * 345,552 SNVs and 8,706 INDELs
+  
+ **2. Negative control**:
+   * Non-variant site: 
+   `controls/Negative_controls_nonvariant.vcf.gz`   
+     * 33,093,574 per sample
+   * Germline variant: 
+   `controls/Negative_controls_germline.vcf`  
+     * 18,151 per sample
     
 ## 1. Running variant callers
 
  ### (A) Single sample analysis
 
- * **MosaicHunter** (v.1.0)  
- * **MosaicForecast** (v.0.0.1)  
-   * SNV calling: 250xRFmodel_addRMSK_Refine.rds
-   * INDEL calling: deletions_250x.RF.rds and insertions_250x.RF.rds 
- * **DeepMosaic** (v.0.0)  
-   * efficientnet-b4_epoch_6.pt
- * **Mutect2** (4.1.9.0)  
-   * tumor only mode 
- * **HaplotypeCaller** (4.1.8.0)  
-   * with ploidy option as 20 and 200 
+ * [**MosaicHunter**](http://mosaichunter.cbi.pku.edu.cn) (v.1.0)  
+     `1.A.pipe_MosaicHunter_single.sh, MH_Grab_Exome_Param.py`
+ * [**MosaicForecast**](https://github.com/parklab/MosaicForecast) (v.0.0.1)  
+    * model for SNV: 250xRFmodel_addRMSK_Refine.rds
+    * model for INDEL: deletions_250x.RF.rds and insertions_250x.RF.rds   
+     `1.A.pipe_MosaicForecast.sh`   
+ * [**DeepMosaic**](https://github.com/Virginiaxu/DeepMosaic) (v.0.0)  
+   * model: efficientnet-b4_epoch_6.pt   
+   `1.A.pipe_DeepMosaic/Running_DeepMosaic.sh`
+ * [**Mutect2**](https://gatk.broadinstitute.org/hc/en-us/articles/13832655155099--Tool-Documentation-Index) (4.1.9.0)  
+   * tumor only mode  
+   `1.A.pipe_Mutect2_single.sh`  
+ * [**HaplotypeCaller**](https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller) (4.1.8.0)  
+   * with ploidy option as 20 and 200   
+   `1.A.pipe_HaplotypeCaller_ploidy.sh`
     
   ### (B) Paired-sample analysis 
     
- * **MosaicHunter** (v.1.0)
+ * [**MosaicHunter**](http://mosaichunter.cbi.pku.edu.cn) (v.1.0)
    * paired naïve mode
    * Modification:  
       (i) Joint probability of two samples with “mosaic” variants was over 0.05   
-      (ii) Joint probability larger than that of any other genotype combinations
- * **Mutect2** (4.1.9.0)
-   * Altered filtration usage : tagged as "normal artifacts"
- * **M2S2MH** 
+      (ii) Joint probability larger than that of any other genotype combinations  
+      `1.B.pipe_MosaicHunter_paired.sh, MH_Collect_shared_MHPm.py, MH_Grab_Exome_Param.py`
+ * [**Mutect2**](https://gatk.broadinstitute.org/hc/en-us/articles/13832655155099--Tool-Documentation-Index) (4.1.9.0)
+   * Altered filtration usage : tagged as "normal artifacts"  
+   `1.B.pipe_Mutect2_paired.sh`
+ * [**M2S2MH**](https://www.nature.com/articles/s41591-019-0711-0#Sec8) 
    * MosaicHunter (v.1.0, single mode)
    * Mutect2 (4.1.9.0, paired mode)
    * Strelka2 (v.2.9.10, somatic mode)
-   * Manta (v.1.6.0)
-    
+   * Manta (v.1.6.0)   
+   `1.B.pipe_M2S2MH`   
+ * [**Strelka2**](https://github.com/Illumina/strelka) (v.2.9.10)
+   * somatic calling mode  
+   `pipe_Strelka2.sh`
+
     
 ## 2. Single sample analysis
 
