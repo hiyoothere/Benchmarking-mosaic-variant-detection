@@ -78,6 +78,11 @@ for file in filelist:
 			for i in tmp_info:
 				if 'TLOD' in i:
 					value = i.lstrip("TLOD=")
+                elif tool == '17.MT_PD':
+                        tmp_info = s[-5].split(';')
+                        for i in tmp_info:
+                                if 'TLOD' in i:
+                                        value = i.lstrip("TLOD=")
 		elif tool == '14.DM':
 			value = s[-3]
 		elif tool == '7.HC20' or tool == '12.HC200':
@@ -85,7 +90,20 @@ for file in filelist:
 			for i in tmp_info:
 				if 'QD' in i:
 					value = i.lstrip("QD=")
-#                        print (v, type, list(this_only))
+		elif tool == '16.STK':
+				tmp_info = s[-5].split(';')
+				for i in tmp_info:
+					if 'SomaticEVS' in i:
+						value = i.lstrip('SomaticEVS=')
+		elif tool == '13.MSM':
+				if s[-4][:2] == 'GT':# line is from mt2
+					tmp_info = s[-5].split(';')
+					
+					for i in tmp_info:
+						if 'TLOD' in i:
+								value = i.lstrip("TLOD=") 
+				else: #line from MH
+					value = 9999
                 if v in list(this_only):
 			VAF =  Expect_VAF.VAF(sample,v,type)
 			out_auprc.write("%s\t%s\t%s\t%s\t%s\n" %(tool, sample, VAF, value, "tp"))
