@@ -1,0 +1,11 @@
+tool	range	PC	TP	FP	Sensitivity	Precision	F1-score
+MT2	5:5	14	8	0	0.5714285714285714	1.0	0.7272727272727273
+NA	10:5	0	0	0	None	None	None
+MT2m	10:10	30	18	0	0.6	1.0	0.7499999999999999
+NA	25:5	0	0	0	None	None	None
+NA	25:10	0	0	0	None	None	None
+MT2;HCp200	25:25	2	2	0	1.0	1.0	1.0
+NA	90:5	0	0	0	None	None	None
+NA	90:10	0	0	0	None	None	None
+NA	90:90	0	0	0	None	None	None
+MT2;HCp20;HCp200	90:25	1	1	0	1.0	1.0	1.0

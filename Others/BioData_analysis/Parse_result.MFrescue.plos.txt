@@ -1,0 +1,10 @@
+MFrescue	5:5	14	12	0	0.8571428571428571	1.0	0.9230769230769229
+MFrescue	10:5	0	0	0	None	None	None
+MFrescue	10:10	30	2	0	0.06666666666666667	1.0	0.125
+MFrescue	25:5	0	0	0	None	None	None
+MFrescue	25:10	0	0	0	None	None	None
+MFrescue	25:25	2	2	0	1.0	1.0	1.0
+MFrescue	90:5	0	0	0	None	None	None
+MFrescue	90:10	0	0	0	None	None	None
+MFrescue	90:25	1	4	0	4.0	1.0	1.6
+MFrescue	90:90	0	1	0	None	None	None

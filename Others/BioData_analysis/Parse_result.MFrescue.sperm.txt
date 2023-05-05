@@ -1,0 +1,11 @@
+tool	range	PC	TP	FP	Sensitivity	Precision	F1-score
+MF_rescue	5:5	3	1	0	0.3333333333333333	1.0	0.5
+MF_rescue	10:5	7	3	0	0.42857142857142855	1.0	0.6
+MF_rescue	10:10	0	0	0	None	None	None
+MF_rescue	25:5	9	4	0	0.4444444444444444	1.0	0.6153846153846154
+MF_rescue	25:10	4	3	0	0.75	1.0	0.8571428571428572
+MF_rescue	25:25	4	3	0	0.75	1.0	0.8571428571428572
+MF_rescue	90:5	0	0	0	None	None	None
+MF_rescue	90:10	0	0	0	None	None	None
+MF_rescue	90:25	1	1	0	1.0	1.0	1.0
+MF_rescue	90:90	0	0	0	None	None	None
