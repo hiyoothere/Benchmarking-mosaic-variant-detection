@@ -96,16 +96,16 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    * Single sample methods were applied for paired-sample analysis with intersection of the calls from two samples   
     `3.A.Two_single.py`
   #### (B) Sample-specific variant detection evaluation 
-    `3.B.SampleSpecific_performance.py, 3.B.Variant_snv_performance_auprc.py, Fig3e.R`
+   `3.B.SampleSpecific_performance.py, 3.B.Variant_snv_performance_auprc.py, Fig3e.R`
   #### (C) Performance evaluation on grouped VAF range for shared variant detection 
-    `3.C.SharedVariant_grouped_VAF.py, Fig3fg.R`
+   `3.C.SharedVariant_grouped_VAF.py, Fig3fg.R`
   #### (D) Sensitivity comparision in shared variant detection
    * balanced or unbalanced VAFs 
    * The unbalanced category includes variants whose differences in VAF of two samples was greater than 2-fold 
     `3.D.SharedVariant_sensitivity.py, Fig3h.R`
   #### (E) Misclassified shared variants
    * shared variants that were misclassified as sample-specific variants   
-    '3.E.Misclassified.py'
+    `3.E.Misclassified.py`
 
 ## 4. Analysis of features and filters
 
@@ -113,6 +113,8 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    * ddd  
    `4.A.Feature_analysis_1_data.py, 4.A.Feature_analysis_2_ROC.R, Fig4_a_ROC.R, Fig4_b.R`
   #### (B) Filter analysis 
+   * dd  
+   `4.B.Filter_analysis.py, Fig4_c.R`
     
 ## 5. Additional strategies for mosaic variant calling
 
