@@ -8,7 +8,7 @@ Benchmark for Mosaic Varaint Detection
 
 
 Here, we present our benchmark of eleven feasible strategies for *mosaic variant detection* based on a systematically designed whole exome-level reference standard that mimics mosaic samples, supported by a total of 354,258 mosaic single-nucleotide variants (SNVs) and insertion-deletion mutations (INDELs) as positive controls and 33,111,725 negative controls consist of reference homozygous sites and germline SNVs and INDELs. We identified not only the best practice for mosaic variant detection, but also the condition-dependent strengths and weaknesses of the current strategies regarding variant allele frequencies, variant sharing, and the usage of control samples. Furthermore, feature-level investigation directs the way for immediate to prolonged improvements in mosaic variant detection. Our results will guide researchers in selecting suitable calling algorithms and suggest future strategies for developers.  
-[![DOI](https://zenodo.org/badge/395906637.svg)](https://zenodo.org/badge/latestdoi/395906637)
+
 <br/>
 <br/>
 
