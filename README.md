@@ -78,14 +78,14 @@ High confidence positive and negative control sets utilized in benchmark. Among 
      `2.B.Variant_snv_performance.py`    
    * AUPRC calculation   
     `2.B.Variant_snv_performance.2.auprc.py`  
-   * Calculate upper limits with false negatives   
+   * Calculate upper limits of sensitivity
     `__Calulate_FN.py`
    * Visualization for Fig.2 b-d   
     `Fig2bcd.R` 
     
   #### (C) Variant call set consistency across different sequencing depths  
     
-   `2.C.Depth_consistency.py`
+   `2.C.Depth_consistency.py, `
   
   #### (D) Variant call set consistency between callers 
    `2.D.Caller_consistency.py`
@@ -93,8 +93,17 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 ## 3. Paired-sample analysis
 
   #### (A) Two single analysis for single sample callers
-  #### (B) Sensitivity evaluation on shared variant detection
+   * Single sample methods were applied for paired-sample analysis with intersection of the calls from two samples
+   ''
+  #### (B) Sample-specific variant detection evaluation
+   * 
   #### (C) Performance evaluation on grouped VAF range for shared variant detection 
+  #### (D) Sensitivity comparision in shared variant detection
+   * balanced or unbalanced VAFs 
+   * The unbalanced category includes variants whose differences in VAF of two samples was greater than 2-fold   
+  #### (E) Misclassified shared variants
+   * shared variants that were misclassified as sample-specific variants   
+    ''
 
 ## 4. Analysis of features and filters
 
