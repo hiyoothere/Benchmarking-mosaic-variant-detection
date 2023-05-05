@@ -94,6 +94,7 @@ for file in filelist:
 				tmp_info = s[-5].split(';')
 				for i in tmp_info:
 					if 'SomaticEVS' in i:
+					if 'SomaticEVS' in i:
 						value = i.lstrip('SomaticEVS=')
 		elif tool == '13.MSM':
 				if s[-4][:2] == 'GT':# line is from mt2
