@@ -1,10 +1,11 @@
 Benchmark for Mosaic Varaint Detection             
 ==========================================
-![자산 6@3x](https://user-images.githubusercontent.com/77031715/144162216-072ccbe7-0c52-4423-8610-a55547480fe1.png)
+![Figure1자산 39](https://user-images.githubusercontent.com/77031715/236405863-f4335050-3251-4f59-8ecd-481864c2965b.png)
 
 <br/>
 
-## Introduction
+## Introduction!
+
 
 Here, we present our benchmark of nine feasible strategies for mosaic variant detection based on a systematically designed reference standard that mimics mosaic samples, with 390,153 control positive and 35,208,888 negative single-nucleotide variants and insertion–deletion mutations. We identified the condition-dependent strengths and weaknesses of the current strategies, instead of a single winner, regarding variant allele frequencies, variant sharing, and the usage of control samples. Moreover, ensemble approach and feature-level investigation direct the way for immediate to prolonged improvements in mosaic variant calling. Our results will guide researchers in selecting suitable calling algorithms and suggest future strategies for developers.  
 [![DOI](https://zenodo.org/badge/395906637.svg)](https://zenodo.org/badge/latestdoi/395906637)
