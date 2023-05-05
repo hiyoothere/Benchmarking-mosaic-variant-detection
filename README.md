@@ -121,9 +121,9 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 
 #### (A) call set- and feature-level recombination  
  * Feature-level recombination of muliple algorithms (Filtration of using features from different methods)   
-  1. MT2-to call set + alt softclip (MF) > 0.05
-  2. HC-p200 call set + MFRL alt (MT2-to) <150
-  3. HC-p200 call set + Het likelihood (MF) > 0.25  
+  1. MT2-*to* call set + *alt softclip* (MF) > 0.05
+  2. HC-*p200* call set + *MFRL alt* (MT2-*to*) <150
+  3. HC-*p200* call set + *Het likelihood* (MF) > 0.25  
  `5.A.Call_Feature_Recombination`
 #### (B) Rescue strategy  
  * Originally used by [M2S2MH](https://www.nature.com/articles/s41591-019-0711-0#Sec8)  
