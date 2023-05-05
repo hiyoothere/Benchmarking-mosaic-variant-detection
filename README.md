@@ -93,14 +93,16 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 ## 3. Paired-sample analysis
 
   #### (A) Two single analysis for single sample callers
-   * Single sample methods were applied for paired-sample analysis with intersection of the calls from two samples
-   ''
+   * Single sample methods were applied for paired-sample analysis with intersection of the calls from two samples   
+    `3.A.Two_single.py`
   #### (B) Sample-specific variant detection evaluation
    * 
-  #### (C) Performance evaluation on grouped VAF range for shared variant detection 
+  #### (C) Performance evaluation on grouped VAF range for shared variant detection      
+    `3.C.SharedVariant_grouped_VAF.py, Fig3fg.R`
   #### (D) Sensitivity comparision in shared variant detection
    * balanced or unbalanced VAFs 
    * The unbalanced category includes variants whose differences in VAF of two samples was greater than 2-fold   
+    `3.D.SharedVariant_sensitivity.py, Fig3h.R  `
   #### (E) Misclassified shared variants
    * shared variants that were misclassified as sample-specific variants   
     ''
