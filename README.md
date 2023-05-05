@@ -1,12 +1,13 @@
 Benchmark for Mosaic Varaint Detection             
 ==========================================
-![자산 6@3x](https://user-images.githubusercontent.com/77031715/144162216-072ccbe7-0c52-4423-8610-a55547480fe1.png)
+![Figure1자산 39](https://user-images.githubusercontent.com/77031715/236405863-f4335050-3251-4f59-8ecd-481864c2965b.png)
 
 <br/>
 
 ## Introduction
 
-Here, we present our benchmark of nine feasible strategies for mosaic variant detection based on a systematically designed reference standard that mimics mosaic samples, with 390,153 control positive and 35,208,888 negative single-nucleotide variants and insertion–deletion mutations. We identified the condition-dependent strengths and weaknesses of the current strategies, instead of a single winner, regarding variant allele frequencies, variant sharing, and the usage of control samples. Moreover, ensemble approach and feature-level investigation direct the way for immediate to prolonged improvements in mosaic variant calling. Our results will guide researchers in selecting suitable calling algorithms and suggest future strategies for developers.  
+
+Here, we present our benchmark of eleven feasible strategies for *mosaic variant detection* based on a systematically designed whole exome-level reference standard that mimics mosaic samples, supported by a total of 354,258 mosaic single-nucleotide variants (SNVs) and insertion-deletion mutations (INDELs) as positive controls and 33,111,725 negative controls consist of reference homozygous sites and germline SNVs and INDELs. We identified not only the best practice for mosaic variant detection, but also the condition-dependent strengths and weaknesses of the current strategies regarding variant allele frequencies, variant sharing, and the usage of control samples. Furthermore, feature-level investigation directs the way for immediate to prolonged improvements in mosaic variant detection. Our results will guide researchers in selecting suitable calling algorithms and suggest future strategies for developers.  
 [![DOI](https://zenodo.org/badge/395906637.svg)](https://zenodo.org/badge/latestdoi/395906637)
 <br/>
 <br/>
@@ -53,42 +54,47 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    * Modification:  
       (i) Joint probability of two samples with “mosaic” variants was over 0.05   
       (ii) Joint probability larger than that of any other genotype combinations  
-      `1.B.pipe_MosaicHunter_paired.sh, MH_Collect_shared_MHPm.py, MH_Grab_Exome_Param.py`
+       `1.B.pipe_MosaicHunter_paired.sh, MH_Collect_shared_MHPm.py, MH_Grab_Exome_Param.py`
  * [**Mutect2**](https://gatk.broadinstitute.org/hc/en-us/articles/13832655155099--Tool-Documentation-Index) (4.1.9.0)
    * Altered filtration usage : tagged as "normal artifacts"  
-   `1.B.pipe_Mutect2_paired.sh`
+    `1.B.pipe_Mutect2_paired.sh`
  * [**M2S2MH**](https://www.nature.com/articles/s41591-019-0711-0#Sec8) 
    * MosaicHunter (v.1.0, single mode)
    * Mutect2 (4.1.9.0, paired mode)
    * Strelka2 (v.2.9.10, somatic mode)
    * Manta (v.1.6.0)   
-   `1.B.pipe_M2S2MH`   
+    `1.B.pipe_M2S2MH`   
  * [**Strelka2**](https://github.com/Illumina/strelka) (v.2.9.10)
    * somatic calling mode  
-   `pipe_Strelka2.sh`
+    `pipe_Strelka2.sh`
 
     
 ## 2. Single sample analysis
 
-  #### (A) Parsing the variant calls with control sets  
-   `2.A.Parsing_variant.py`
+  #### (A) Parsing the variant calls with control sets   
+   * Parsing variant call outputs with positive and negative controls  
+     * True positives from SetB
+     * Non-variant false positives from SetA
+     * Germlin false positives from SetB  
+    `2.A.Parsing_variant.py`
   #### (B) Performance evaluation towards diverse VAF bins   
    * Calculation of sensitivity, precison, and F1-score  
-    * precision recalibration applied based on the density of positive controls.  
-     `2.B.Variant_snv_performance.py`    
+     * precision recalibration applied based on the density of positive controls.  
+      `2.B.Variant_snv_performance.py`    
    * AUPRC calculation   
-    `2.B.Variant_snv_performance.2.auprc.py`  
+     `2.B.Variant_snv_performance.2.auprc.py`  
    * Calculate upper limits of sensitivity
-    `__Calulate_FN.py`
+     `__Calulate_FN.py`
    * Visualization for Fig.2 b-d   
-    `Fig2bcd.R` 
+     `Fig2bcd.R` 
     
   #### (C) Variant call set consistency across different sequencing depths  
-    
-   `2.C.Depth_consistency.py, Fig2e.R`
+   * The inconsistency of the variant call sets within each approach towards four different four depths: 125×, 250×, 500×, and 1,100×  
+    `2.C.Depth_consistency.py, Fig2f.R`
   
   #### (D) Variant call set consistency between callers 
-   `2.D.Caller_consistency.py, Fig2f.R`
+   * Similarity of call sets between different approaches calculated with Jaccard Index  
+    `2.D.Caller_consistency.py, Fig2e.R`
    
 ## 3. Paired-sample analysis
 
@@ -110,20 +116,36 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 ## 4. Analysis of features and filters
 
   #### (A) Feature analysis  
-   * ddd  
+   * Evaluation on 48 features used in detection methods  
    `4.A.Feature_analysis_1_data.py, 4.A.Feature_analysis_2_ROC.R, Fig4_a_ROC.R, Fig4_b.R`
   #### (B) Filter analysis 
-   * dd  
+   * Evaluation of post filters  
    `4.B.Filter_analysis.py, Fig4_c.R`
     
 ## 5. Additional strategies for mosaic variant calling
 
-#### (A) call set- and feature-level recombination
-#### (B) Rescue strategy
-#### (C) Filtration with lineage distance
+#### (A) call set- and feature-level recombination  
+ * Feature-level recombination of muliple algorithms (Filtration of using features from different methods)   
+  1. MT2-*to* call set + *alt softclip* (MF) > 0.05
+  2. HC-*p200* call set + *MFRL alt* (MT2-*to*) <150
+  3. HC-*p200* call set + *Het likelihood* (MF) > 0.25  
+ `5.A.Call_Feature_Recombination`
+#### (B) Rescue strategy  
+ * Originally used by [M2S2MH](https://www.nature.com/articles/s41591-019-0711-0#Sec8)  
+ * Improve sensitivity of high-precision mosaic category methods for shared variant detection  
+ `5.B.Rescue`
+#### (C) Filtration with lineage distance  
+ * Filtration utilizing developmental lineage tree  
+ * Two samples that are originated from more recently differentiated tissues are more proximal in a developmental lineage tree  
+ * Improve precision in shared variant detection  
+ `5.C.Lineage_Distance_Filter`
 
-## 6. Visualization  
-
-## 7. Others
-  * Generation of in silico reference standards
-  * Downsampling of the reference data
+## 6. Others
+  * Generation of in silico reference standards  
+   `DS_TS_Downsample.sh` 
+  * Downsampling of the reference data  
+   `In_silico_ref_data`  
+  * Benchmark summary (Fig. 6)  
+   `Benchmark_summary.ipynb`  
+  * Validation with biological data  
+   `BioData_analysis`

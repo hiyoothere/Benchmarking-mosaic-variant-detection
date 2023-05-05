@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-sys.path.append("..//module/")
+sys.path.append("../module/")
 import Expect_VAF
 
 l_set = []
