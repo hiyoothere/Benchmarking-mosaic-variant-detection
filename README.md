@@ -54,42 +54,47 @@ High confidence positive and negative control sets utilized in benchmark. Among 
    * Modification:  
       (i) Joint probability of two samples with “mosaic” variants was over 0.05   
       (ii) Joint probability larger than that of any other genotype combinations  
-      `1.B.pipe_MosaicHunter_paired.sh, MH_Collect_shared_MHPm.py, MH_Grab_Exome_Param.py`
+       `1.B.pipe_MosaicHunter_paired.sh, MH_Collect_shared_MHPm.py, MH_Grab_Exome_Param.py`
  * [**Mutect2**](https://gatk.broadinstitute.org/hc/en-us/articles/13832655155099--Tool-Documentation-Index) (4.1.9.0)
    * Altered filtration usage : tagged as "normal artifacts"  
-   `1.B.pipe_Mutect2_paired.sh`
+    `1.B.pipe_Mutect2_paired.sh`
  * [**M2S2MH**](https://www.nature.com/articles/s41591-019-0711-0#Sec8) 
    * MosaicHunter (v.1.0, single mode)
    * Mutect2 (4.1.9.0, paired mode)
    * Strelka2 (v.2.9.10, somatic mode)
    * Manta (v.1.6.0)   
-   `1.B.pipe_M2S2MH`   
+    `1.B.pipe_M2S2MH`   
  * [**Strelka2**](https://github.com/Illumina/strelka) (v.2.9.10)
    * somatic calling mode  
-   `pipe_Strelka2.sh`
+    `pipe_Strelka2.sh`
 
     
 ## 2. Single sample analysis
 
-  #### (A) Parsing the variant calls with control sets  
-   `2.A.Parsing_variant.py`
+  #### (A) Parsing the variant calls with control sets   
+   * Parsing variant call outputs with positive and negative controls  
+     * True positives from SetB
+     * Non-variant false positives from SetA
+     * Germlin false positives from SetB  
+    `2.A.Parsing_variant.py`
   #### (B) Performance evaluation towards diverse VAF bins   
    * Calculation of sensitivity, precison, and F1-score  
-    * precision recalibration applied based on the density of positive controls.  
-     `2.B.Variant_snv_performance.py`    
+     * precision recalibration applied based on the density of positive controls.  
+      `2.B.Variant_snv_performance.py`    
    * AUPRC calculation   
-    `2.B.Variant_snv_performance.2.auprc.py`  
+     `2.B.Variant_snv_performance.2.auprc.py`  
    * Calculate upper limits of sensitivity
-    `__Calulate_FN.py`
+     `__Calulate_FN.py`
    * Visualization for Fig.2 b-d   
-    `Fig2bcd.R` 
+     `Fig2bcd.R` 
     
   #### (C) Variant call set consistency across different sequencing depths  
-    
-   `2.C.Depth_consistency.py, Fig2e.R`
+   * The inconsistency of the variant call sets within each approach towards four different four depths: 125×, 250×, 500×, and 1,100×  
+    `2.C.Depth_consistency.py, Fig2f.R`
   
   #### (D) Variant call set consistency between callers 
-   `2.D.Caller_consistency.py, Fig2f.R`
+   * Similarity of call sets between different approaches calculated with Jaccard Index  
+    `2.D.Caller_consistency.py, Fig2e.R`
    
 ## 3. Paired-sample analysis
 
