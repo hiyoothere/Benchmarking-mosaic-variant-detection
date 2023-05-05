@@ -110,22 +110,28 @@ High confidence positive and negative control sets utilized in benchmark. Among 
 ## 4. Analysis of features and filters
 
   #### (A) Feature analysis  
-   * ddd  
+   * Evaluation on 48 features used in detection methods  
    `4.A.Feature_analysis_1_data.py, 4.A.Feature_analysis_2_ROC.R, Fig4_a_ROC.R, Fig4_b.R`
   #### (B) Filter analysis 
-   * dd  
+   * Evaluation of post filters  
    `4.B.Filter_analysis.py, Fig4_c.R`
     
 ## 5. Additional strategies for mosaic variant calling
 
 #### (A) call set- and feature-level recombination  
- * llll  
+ * Feature-level recombination of muliple algorithms (Filtration of using features from different methods)   
+  1. MT2-to call set + alt softclip (MF) > 0.05
+  2. HC-p200 call set + MFRL alt (MT2-to) <150
+  3. HC-p200 call set + Het likelihood (MF) > 0.25  
  `5.A.Call_Feature_Recombination`
 #### (B) Rescue strategy  
- * llll  
+ * Originally used by [M2S2MH](https://www.nature.com/articles/s41591-019-0711-0#Sec8)  
+ * Improve sensitivity of high-precision mosaic category methods for shared variant detection  
  `5.B.Rescue`
 #### (C) Filtration with lineage distance  
- * llll  
+ * Filtration utilizing developmental lineage tree  
+ * Two samples that are originated from more recently differentiated tissues are more proximal in a developmental lineage tree  
+ * Improve precision in shared variant detection  
  `5.C.Lineage_Distance_Filter`
 
 ## 6. Others
