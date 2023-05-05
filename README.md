@@ -134,4 +134,4 @@ High confidence positive and negative control sets utilized in benchmark. Among 
   * Downsampling of the reference data  
    `In_silico_ref_data`  
   * Benchmark summary (Fig. 6)  
-   Benchmark_summary.ipynb`
+   `Benchmark_summary.ipynb`
