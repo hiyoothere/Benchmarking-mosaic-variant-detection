@@ -118,12 +118,20 @@ High confidence positive and negative control sets utilized in benchmark. Among 
     
 ## 5. Additional strategies for mosaic variant calling
 
-#### (A) call set- and feature-level recombination
-#### (B) Rescue strategy
-#### (C) Filtration with lineage distance
+#### (A) call set- and feature-level recombination  
+ * llll  
+ `5.A.Call_Feature_Recombination`
+#### (B) Rescue strategy  
+ * llll  
+ `5.B.Rescue`
+#### (C) Filtration with lineage distance  
+ * llll  
+ `5.C.Lineage_Distance_Filter`
 
-## 6. Visualization  
-
-## 7. Others
-  * Generation of in silico reference standards
-  * Downsampling of the reference data
+## 6. Others
+  * Generation of in silico reference standards  
+   `DS_TS_Downsample.sh` 
+  * Downsampling of the reference data  
+   `In_silico_ref_data`  
+  * Benchmark summary (Fig. 6)  
+   Benchmark_summary.ipynb`
