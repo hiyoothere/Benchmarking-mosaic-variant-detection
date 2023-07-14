@@ -1,6 +1,6 @@
 Benchmark for Mosaic Varaint Detection             
 ==========================================
-![Figure1자산 39](https://user-images.githubusercontent.com/77031715/236405863-f4335050-3251-4f59-8ecd-481864c2965b.png)
+![Figure1_GH자산 3](https://github.com/hiyoothere/Benchmarking-mosaic-variant-detection/assets/77031715/a3a3bea1-6619-4aaf-b58f-d1f8b82cf950)
 
 <br/>
 
